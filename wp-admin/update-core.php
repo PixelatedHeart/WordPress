@@ -589,9 +589,16 @@ if ( 'upgrade-core' == $action ) {
 		echo '</p></div>';
 	}
 
+	$last_update_check = false;
+	$current = get_site_transient( 'update_core' );
+
+	if ( $current && isset ( $current->last_checked ) )	{
+		$last_update_check = $current->last_checked + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS;
+	}
+
 	echo '<p>';
 	/* translators: %1 date, %2 time. */
-	printf( __( 'Last checked on %1$s at %2$s.' ), date_i18n( __( 'F j, Y' ) ), date_i18n( __( 'g:i a' ) ) );
+	printf( __( 'Last checked on %1$s at %2$s.' ), date_i18n( __( 'F j, Y' ), $last_update_check ), date_i18n( __( 'g:i a' ), $last_update_check ) );
 	echo ' &nbsp; <a class="button" href="' . esc_url( self_admin_url('update-core.php?force-check=1') ) . '">' . __( 'Check Again' ) . '</a>';
 	echo '</p>';
 
@@ -611,6 +618,11 @@ if ( 'upgrade-core' == $action ) {
 	 */
 	do_action( 'core_upgrade_preamble' );
 	echo '</div>';
+
+	wp_localize_script( 'updates', '_wpUpdatesItemCounts', array(
+		'totals'  => wp_get_update_data(),
+	) );
+
 	include(ABSPATH . 'wp-admin/admin-footer.php');
 
 } elseif ( 'do-core-upgrade' == $action || 'do-core-reinstall' == $action ) {
@@ -634,6 +646,10 @@ if ( 'upgrade-core' == $action ) {
 
 	if ( isset( $_POST['upgrade'] ) )
 		do_core_upgrade($reinstall);
+
+	wp_localize_script( 'updates', '_wpUpdatesItemCounts', array(
+		'totals'  => wp_get_update_data(),
+	) );
 
 	include(ABSPATH . 'wp-admin/admin-footer.php');
 
@@ -663,6 +679,11 @@ if ( 'upgrade-core' == $action ) {
 	echo '<h1>' . __( 'Update Plugins' ) . '</h1>';
 	echo '<iframe src="', $url, '" style="width: 100%; height: 100%; min-height: 750px;" frameborder="0" title="' . esc_attr__( 'Update progress' ) . '"></iframe>';
 	echo '</div>';
+
+	wp_localize_script( 'updates', '_wpUpdatesItemCounts', array(
+		'totals'  => wp_get_update_data(),
+	) );
+
 	include(ABSPATH . 'wp-admin/admin-footer.php');
 
 } elseif ( 'do-theme-upgrade' == $action ) {
@@ -693,6 +714,11 @@ if ( 'upgrade-core' == $action ) {
 		<iframe src="<?php echo $url ?>" style="width: 100%; height: 100%; min-height: 750px;" frameborder="0" title="<?php esc_attr_e( 'Update progress' ); ?>"></iframe>
 	</div>
 	<?php
+
+	wp_localize_script( 'updates', '_wpUpdatesItemCounts', array(
+		'totals'  => wp_get_update_data(),
+	) );
+
 	include(ABSPATH . 'wp-admin/admin-footer.php');
 
 } elseif ( 'do-translation-upgrade' == $action ) {
@@ -712,6 +738,10 @@ if ( 'upgrade-core' == $action ) {
 
 	$upgrader = new Language_Pack_Upgrader( new Language_Pack_Upgrader_Skin( compact( 'url', 'nonce', 'title', 'context' ) ) );
 	$result = $upgrader->bulk_upgrade();
+
+	wp_localize_script( 'updates', '_wpUpdatesItemCounts', array(
+		'totals'  => wp_get_update_data(),
+	) );
 
 	require_once( ABSPATH . 'wp-admin/admin-footer.php' );
 

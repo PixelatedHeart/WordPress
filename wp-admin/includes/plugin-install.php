@@ -263,7 +263,7 @@ function install_search_form( $deprecated = true ) {
 			<option value="tag"<?php selected( 'tag', $type ); ?>><?php _ex( 'Tag', 'Plugin Installer' ); ?></option>
 		</select>
 		<label><span class="screen-reader-text"><?php _e( 'Search Plugins' ); ?></span>
-			<input type="search" name="s" value="<?php echo esc_attr( $term ) ?>" class="wp-filter-search" placeholder="<?php esc_attr_e( 'Search Plugins' ); ?>" />
+			<input type="search" name="s" value="<?php echo esc_attr( $term ) ?>" class="wp-filter-search" placeholder="<?php esc_attr_e( 'Search plugins...' ); ?>" />
 		</label>
 		<?php submit_button( __( 'Search Plugins' ), 'hide-if-js', false, false, array( 'id' => 'search-submit' ) ); ?>
 	</form><?php
@@ -348,9 +348,16 @@ function display_plugins_table() {
  *
  * @since 3.0.0
  *
- * @param array|object $api
- * @param bool        $loop
- * @return type
+ * @param  array|object $api  Data about the plugin retrieved from the API.
+ * @param  bool         $loop Optional. Disable further loops. Default false.
+ * @return array {
+ *     Plugin installation status data.
+ *
+ *     @type string $status  Status of a plugin. Could be one of 'install', 'update_available', 'latest_installed' or 'newer_installed'.
+ *     @type string $url     Plugin installation URL.
+ *     @type string $version The most recent version of the plugin.
+ *     @type string $file    Plugin filename relative to the plugins directory.
+ * }
  */
 function install_plugin_install_status($api, $loop = false) {
 	// This function is called recursively, $loop prevents further loops.
@@ -567,7 +574,7 @@ function install_plugin_information() {
 					}
 					?></li>
 			<?php } if ( ! empty( $api->slug ) && empty( $api->external ) ) { ?>
-				<li><a target="_blank" href="https://wordpress.org/plugins/<?php echo $api->slug; ?>/"><?php _e( 'WordPress.org Plugin Page &#187;' ); ?></a></li>
+				<li><a target="_blank" href="<?php echo __( 'https://wordpress.org/plugins/' ) . $api->slug; ?>/"><?php _e( 'WordPress.org Plugin Page &#187;' ); ?></a></li>
 			<?php } if ( ! empty( $api->homepage ) ) { ?>
 				<li><a target="_blank" href="<?php echo esc_url( $api->homepage ); ?>"><?php _e( 'Plugin Homepage &#187;' ); ?></a></li>
 			<?php } if ( ! empty( $api->donate_link ) && empty( $api->contributors ) ) { ?>
