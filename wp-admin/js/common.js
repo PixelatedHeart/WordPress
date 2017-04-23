@@ -418,7 +418,7 @@ $document.ready( function() {
 	screenMeta.init();
 
 	// This event needs to be delegated. Ticket #37973.
-	$body.on( 'click', 'tbody .check-column :checkbox', function( event ) {
+	$body.on( 'click', 'tbody > tr > .check-column :checkbox', function( event ) {
 		// Shift click to select a range of checkboxes.
 		if ( 'undefined' == event.shiftKey ) { return true; }
 		if ( event.shiftKey ) {
@@ -897,7 +897,7 @@ $document.ready( function() {
 	/**
 	 * @summary Get the viewport width.
 	 *
-	 * @since 4.7
+	 * @since 4.7.0
 	 *
 	 * @returns {number|boolean} The current viewport width or false if the
 	 *                           browser doesn't support innerWidth (IE < 9).
@@ -919,7 +919,7 @@ $document.ready( function() {
 	 * Sets the global variable `menuState` and triggers a custom event passing
 	 * the current menu state.
 	 *
-	 * @since 4.7
+	 * @since 4.7.0
 	 *
 	 * @returns {void}
 	 */
@@ -947,7 +947,7 @@ $document.ready( function() {
 	 * `aria-label` attributes of the button to give feedback to assistive
 	 * technologies. In the responsive view, the button is always hidden.
 	 *
-	 * @since 4.7
+	 * @since 4.7.0
 	 *
 	 * @returns {void}
 	 */

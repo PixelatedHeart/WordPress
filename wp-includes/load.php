@@ -128,6 +128,7 @@ function wp_check_php_mysql_versions() {
 		$protocol = wp_get_server_protocol();
 		header( sprintf( '%s 500 Internal Server Error', $protocol ), true, 500 );
 		header( 'Content-Type: text/html; charset=utf-8' );
+		/* translators: 1: Current PHP version number, 2: WordPress version number, 3: Minimum required PHP version number */
 		die( sprintf( __( 'Your server is running PHP version %1$s but WordPress %2$s requires at least %3$s.' ), $php_version, $wp_version, $required_php_version ) );
 	}
 
@@ -471,12 +472,19 @@ function wp_using_ext_object_cache( $using = null ) {
  * @access private
  */
 function wp_start_object_cache() {
+	global $wp_filter;
+
 	$first_init = false;
  	if ( ! function_exists( 'wp_cache_init' ) ) {
 		if ( file_exists( WP_CONTENT_DIR . '/object-cache.php' ) ) {
 			require_once ( WP_CONTENT_DIR . '/object-cache.php' );
 			if ( function_exists( 'wp_cache_init' ) ) {
 				wp_using_ext_object_cache( true );
+			}
+
+			// Re-initialize any hooks added manually by object-cache.php
+			if ( $wp_filter ) {
+				$wp_filter = WP_Hook::build_preinitialized_hooks( $wp_filter );
 			}
 		}
 
@@ -507,7 +515,7 @@ function wp_start_object_cache() {
 	}
 
 	if ( function_exists( 'wp_cache_add_global_groups' ) ) {
-		wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'useremail', 'userslugs', 'site-transient', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'site-details', 'rss', 'global-posts', 'blog-id-cache', 'networks', 'sites' ) );
+		wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'useremail', 'userslugs', 'site-transient', 'site-options', 'blog-lookup', 'blog-details', 'site-details', 'rss', 'global-posts', 'blog-id-cache', 'networks', 'sites' ) );
 		wp_cache_add_non_persistent_groups( array( 'counts', 'plugins' ) );
 	}
 }
@@ -1063,4 +1071,24 @@ function wp_doing_ajax() {
  */
 function is_wp_error( $thing ) {
 	return ( $thing instanceof WP_Error );
+}
+
+/**
+ * Determines whether file modifications are disallowed.
+ *
+ * @since 4.8.0
+ *
+ * @param string $context The usage context.
+ * @return bool True if file modification is disallowed, false otherwise.
+ */
+function wp_disallow_file_mods( $context ) {
+	/**
+	 * Filters whether file modifications are disallowed.
+	 *
+	 * @since 4.8.0
+	 *
+	 * @param bool   $disllow_file_mods Whether file modifications are disallowed.
+	 * @param string $context           The usage context.
+	 */
+	return apply_filters( 'disallow_file_mods' , defined( 'DISALLOW_FILE_MODS' ) && DISALLOW_FILE_MODS, $context );
 }

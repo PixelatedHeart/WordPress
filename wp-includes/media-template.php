@@ -163,7 +163,7 @@ function wp_print_media_templates() {
 
 	<script type="text/html" id="tmpl-media-modal">
 		<div class="<?php echo $class; ?>">
-			<button type="button" class="button-link media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text"><?php _e( 'Close media panel' ); ?></span></span></button>
+			<button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text"><?php _e( 'Close media panel' ); ?></span></span></button>
 			<div class="media-modal-content"></div>
 		</div>
 		<div class="media-modal-backdrop"></div>
@@ -325,6 +325,8 @@ function wp_print_media_templates() {
 				<div class="attachment-actions">
 					<# if ( 'image' === data.type && ! data.uploading && data.sizes && data.can.save ) { #>
 					<button type="button" class="button edit-attachment"><?php _e( 'Edit Image' ); ?></button>
+					<# } else if ( 'pdf' === data.subtype && data.sizes ) { #>
+					<?php _e( 'Document Preview' ); ?>
 					<# } #>
 				</div>
 			</div>
@@ -470,7 +472,7 @@ function wp_print_media_templates() {
 			<# } #>
 		</div>
 		<# if ( data.buttons.check ) { #>
-			<button type="button" class="button-link check" tabindex="-1"><span class="media-modal-icon"></span><span class="screen-reader-text"><?php _e( 'Deselect' ); ?></span></button>
+			<button type="button" class="check" tabindex="-1"><span class="media-modal-icon"></span><span class="screen-reader-text"><?php _e( 'Deselect' ); ?></span></button>
 		<# } #>
 		<#
 		var maybeReadOnly = data.can.save || data.allowLocalEdits ? '' : 'readonly';
@@ -759,7 +761,7 @@ function wp_print_media_templates() {
 				<# } #>
 				>
 				<?php
-				// This filter is documented in wp-admin/includes/media.php
+				/** This filter is documented in wp-admin/includes/media.php */
 				$size_names = apply_filters( 'image_size_names_choose', array(
 					'thumbnail' => __( 'Thumbnail' ),
 					'medium'    => __( 'Medium' ),

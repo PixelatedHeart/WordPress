@@ -252,7 +252,7 @@ add_action( 'wp_head',             'wp_print_head_scripts',            9    );
 add_action( 'wp_head',             'wp_generator'                           );
 add_action( 'wp_head',             'rel_canonical'                          );
 add_action( 'wp_head',             'wp_shortlink_wp_head',            10, 0 );
-add_action( 'wp_head',             'wp_custom_css_cb',                11    );
+add_action( 'wp_head',             'wp_custom_css_cb',                101   );
 add_action( 'wp_head',             'wp_site_icon',                    99    );
 add_action( 'wp_footer',           'wp_print_footer_scripts',         20    );
 add_action( 'template_redirect',   'wp_shortlink_header',             11, 0 );
@@ -348,7 +348,7 @@ add_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 add_filter( 'default_option_link_manager_enabled', '__return_true' );
 
 // This option no longer exists; tell plugins we always support auto-embedding.
-add_filter( 'default_option_embed_autourls', '__return_true' );
+add_filter( 'pre_option_embed_autourls', '__return_true' );
 
 // Default settings for heartbeat
 add_filter( 'heartbeat_settings', 'wp_heartbeat_settings' );
