@@ -335,7 +335,7 @@ function update_blog_details( $blog_id, $details = array() ) {
 	if ( false === $result )
 		return false;
 
-	// If spam status changed, issue actions.
+	// If spam status changed, issue actions. //
 	if ( $details['spam'] != $current_details['spam'] ) {
 		if ( $details['spam'] == 1 ) {
 			/**
