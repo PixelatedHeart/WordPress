@@ -67,11 +67,22 @@ class WP_Community_Events {
 	 * data. The API will send back a recognized location based on the data, along
 	 * with nearby events.
 	 *
+	 * The browser's request for events is proxied with this method, rather
+	 * than having the browser make the request directly to api.wordpress.org,
+	 * because it allows results to be cached server-side and shared with other
+	 * users and sites in the network. This makes the process more efficient,
+	 * since increasing the number of visits that get cached data means users
+	 * don't have to wait as often; if the user's browser made the request
+	 * directly, it would also need to make a second request to WP in order to
+	 * pass the data for caching. Having WP make the request also introduces
+	 * the opportunity to anonymize the IP before sending it to w.org, which
+	 * mitigates possible privacy concerns.
+	 *
 	 * @since 4.8.0
 	 *
-	 * @param string $location_search Optional city name to help determine the location.
+	 * @param string $location_search Optional. City name to help determine the location.
 	 *                                e.g., "Seattle". Default empty string.
-	 * @param string $timezone        Optional timezone to help determine the location.
+	 * @param string $timezone        Optional. Timezone to help determine the location.
 	 *                                Default empty string.
 	 * @return array|WP_Error A WP_Error on failure; an array with location and events on
 	 *                        success.
@@ -137,13 +148,16 @@ class WP_Community_Events {
 	 * @access protected
 	 * @since 4.8.0
 	 *
-	 * @param  string $search   City search string. Default empty string.
-	 * @param  string $timezone Timezone string. Default empty string.
+	 * @param  string $search   Optional. City search string. Default empty string.
+	 * @param  string $timezone Optional. Timezone string. Default empty string.
 	 * @return string The request URL.
 	 */
 	protected function get_request_url( $search = '', $timezone = '' ) {
 		$api_url = 'https://api.wordpress.org/events/1.0/';
-		$args    = array( 'number' => 5 ); // Get more than three in case some get trimmed out.
+		$args    = array(
+			'number' => 5, // Get more than three in case some get trimmed out.
+			'ip'     => $this->get_client_ip(),
+		);
 
 		/*
 		 * Send the minimal set of necessary arguments, in order to increase the
@@ -161,16 +175,6 @@ class WP_Community_Events {
 
 			if ( $search ) {
 				$args['location'] = $search;
-			} else {
-				/*
-				 * Protect the user's privacy by anonymizing their IP before sending
-				 * it to w.org, and only send it when necessary.
-				 *
-				 * The w.org API endpoint only uses the IP address when a location
-				 * query is not provided, so we can safely avoid sending it when
-				 * there is a query.
-				 */
-				$args['ip'] = $this->maybe_anonymize_ip_address( $this->get_unsafe_client_ip() );
 			}
 		}
 
@@ -178,7 +182,11 @@ class WP_Community_Events {
 	}
 
 	/**
-	 * Determines the user's actual IP address, if possible.
+	 * Determines the user's actual IP address and attempts to partially
+	 * anonymize an IP address by converting it to a network ID.
+	 *
+	 * Geolocating the network ID usually returns a similar location as the
+	 * actual IP, but provides some privacy for the user.
 	 *
 	 * $_SERVER['REMOTE_ADDR'] cannot be used in all cases, such as when the user
 	 * is making their request through a proxy, or when the web server is behind
@@ -186,6 +194,7 @@ class WP_Community_Events {
 	 * than the user's actual address.
 	 *
 	 * Modified from http://stackoverflow.com/a/2031935/450127, MIT license.
+	 * Modified from https://github.com/geertw/php-ip-anonymizer, MIT license.
 	 *
 	 * SECURITY WARNING: This function is _NOT_ intended to be used in
 	 * circumstances where the authenticity of the IP address matters. This does
@@ -195,9 +204,10 @@ class WP_Community_Events {
 	 * @access protected
 	 * @since 4.8.0
 	 *
-	 * @return false|string false on failure, the string address on success.
+	 * @return false|string The anonymized address on success; the given address
+	 *                      or false on failure.
 	 */
-	protected function get_unsafe_client_ip() {
+	protected function get_client_ip() {
 		$client_ip = false;
 
 		// In order of preference, with the best ones for this purpose first.
@@ -225,37 +235,18 @@ class WP_Community_Events {
 			}
 		}
 
-		return $client_ip;
-	}
-
-	/**
-	 * Attempts to partially anonymize an IP address by converting it to a network ID.
-	 *
-	 * Geolocating the network ID usually returns a similar location as the
-	 * actual IP, but provides some privacy for the user.
-	 *
-	 * Modified from https://github.com/geertw/php-ip-anonymizer, MIT license.
-	 *
-	 * @access protected
-	 * @since 4.8.0
-	 *
-	 * @param  string $address The IP address that should be anonymized.
-	 * @return bool|string The anonymized address on success; the given address
-	 *                     or false on failure.
-	 */
-	protected function maybe_anonymize_ip_address( $address ) {
 		// These functions are not available on Windows until PHP 5.3.
-		if ( ! function_exists( 'inet_pton' ) || ! function_exists( 'inet_ntop' ) ) {
-			return $address;
+		if ( function_exists( 'inet_pton' ) && function_exists( 'inet_ntop' ) ) {
+			if ( 4 === strlen( inet_pton( $client_ip ) ) ) {
+				$netmask = '255.255.255.0'; // ipv4.
+			} else {
+				$netmask = 'ffff:ffff:ffff:ffff:0000:0000:0000:0000'; // ipv6.
+			}
+
+			$client_ip = inet_ntop( inet_pton( $client_ip ) & inet_pton( $netmask ) );
 		}
 
-		if ( 4 === strlen( inet_pton( $address ) ) ) {
-			$netmask = '255.255.255.0'; // ipv4.
-		} else {
-			$netmask = 'ffff:ffff:ffff:ffff:0000:0000:0000:0000'; // ipv6.
-		}
-
-		return inet_ntop( inet_pton( $address ) & inet_pton( $netmask ) );
+		return $client_ip;
 	}
 
 	/**
