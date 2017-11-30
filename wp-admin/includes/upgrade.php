@@ -8,7 +8,7 @@
  * @subpackage Administration
  */
 
-/** Include user install customize script. */
+/** Include user installation customization script. */
 if ( file_exists(WP_CONTENT_DIR . '/install.php') )
 	require (WP_CONTENT_DIR . '/install.php');
 
@@ -95,7 +95,7 @@ function wp_install( $blog_title, $user_name, $user_email, $public, $deprecated 
 
 	flush_rewrite_rules();
 
-	wp_new_blog_notification($blog_title, $guessurl, $user_id, ($email_password ? $user_password : __('The password you chose during the install.') ) );
+	wp_new_blog_notification($blog_title, $guessurl, $user_id, ($email_password ? $user_password : __('The password you chose during installation.') ) );
 
 	wp_cache_flush();
 
@@ -222,14 +222,14 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.' );
 		$first_page = get_site_option( 'first_page' );
 
 	$first_page = ! empty( $first_page ) ? $first_page : sprintf( __( "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
-		
-		<blockquote>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</blockquote>
-		
-		...or something like this:
-		
-		<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>
-		
-		As a new WordPress user, you should go to <a href=\"%s\">your dashboard</a> to delete this page and create new pages for your content. Have fun!" ), admin_url() );
+
+<blockquote>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</blockquote>
+
+...or something like this:
+
+<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>
+
+As a new WordPress user, you should go to <a href=\"%s\">your dashboard</a> to delete this page and create new pages for your content. Have fun!" ), admin_url() );
 
 	$first_post_guid = get_option('home') . '/?page_id=2';
 	$wpdb->insert( $wpdb->posts, array(
@@ -285,7 +285,7 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.' );
 endif;
 
 /**
- * Maybe enable pretty permalinks on install.
+ * Maybe enable pretty permalinks on installation.
  *
  * If after enabling pretty permalinks don't work, fallback to query-string permalinks.
  *
@@ -433,10 +433,13 @@ function wp_upgrade() {
 	wp_cache_flush();
 
 	if ( is_multisite() ) {
-		if ( $wpdb->get_row( "SELECT blog_id FROM {$wpdb->blog_versions} WHERE blog_id = '{$wpdb->blogid}'" ) )
-			$wpdb->query( "UPDATE {$wpdb->blog_versions} SET db_version = '{$wp_db_version}' WHERE blog_id = '{$wpdb->blogid}'" );
-		else
-			$wpdb->query( "INSERT INTO {$wpdb->blog_versions} ( `blog_id` , `db_version` , `last_updated` ) VALUES ( '{$wpdb->blogid}', '{$wp_db_version}', NOW());" );
+		$site_id = get_current_blog_id();
+
+		if ( $wpdb->get_row( $wpdb->prepare( "SELECT blog_id FROM {$wpdb->blog_versions} WHERE blog_id = %d", $site_id ) ) ) {
+			$wpdb->query( $wpdb->prepare( "UPDATE {$wpdb->blog_versions} SET db_version = %d WHERE blog_id = %d", $wp_db_version, $site_id ) );
+		} else {
+			$wpdb->query( $wpdb->prepare( "INSERT INTO {$wpdb->blog_versions} ( `blog_id` , `db_version` , `last_updated` ) VALUES ( %d, %d, NOW() );", $site_id, $wp_db_version ) );
+		}
 	}
 
 	/**
@@ -452,7 +455,7 @@ function wp_upgrade() {
 endif;
 
 /**
- * Functions to be called in install and upgrade scripts.
+ * Functions to be called in installation and upgrade scripts.
  *
  * Contains conditional checks to determine which upgrade scripts to run,
  * based on database version and WP version being updated-to.
@@ -564,10 +567,6 @@ function upgrade_all() {
 
 	if ( $wp_current_db_version < 37965 )
 		upgrade_460();
-
-	if ( $wp_current_db_version < 40607 ) {
-		upgrade_480();
-	}
 
 	maybe_disable_link_manager();
 
@@ -885,7 +884,7 @@ function upgrade_160() {
 			$wpdb->update( $wpdb->posts, array(	'post_status' => 'attachment',
 												'post_mime_type' => $object->post_type,
 												'post_type' => ''),
-										 array( 'ID' => $object->ID ) );
+										array( 'ID' => $object->ID ) );
 
 			$meta = get_post_meta($object->ID, 'imagedata', true);
 			if ( ! empty($meta['file']) )
@@ -1261,7 +1260,7 @@ function upgrade_280() {
 			}
 			$start += 20;
 		}
-		refresh_blog_details( $wpdb->blogid );
+		clean_blog_cache( get_current_blog_id() );
 	}
 }
 
@@ -1737,26 +1736,6 @@ function upgrade_460() {
 }
 
 /**
- * Executes changes made in WordPress 4.8.0.
- *
- * @ignore
- * @since 4.8.0
- *
- * @global int $wp_current_db_version Current database version.
- */
-function upgrade_480() {
-	global $wp_current_db_version;
-
-	if ( $wp_current_db_version < 40607 ) {
-		// This feature plugin was merged for #40702, so the plugin itself is no longer needed
-		deactivate_plugins( array( 'nearby-wp-events/nearby-wordpress-events.php' ), true );
-
-		// The markup stored in this transient changed for #40702
-		delete_transient( 'dash_' . md5( 'dashboard_primary' . '_' . get_locale() ) );
-	}
-}
-
-/**
  * Executes network-level upgrade routines.
  *
  * @since 3.0.0
@@ -1767,21 +1746,8 @@ function upgrade_480() {
 function upgrade_network() {
 	global $wp_current_db_version, $wpdb;
 
-	// Always.
-	if ( is_main_network() ) {
-		/*
-		 * Deletes all expired transients. The multi-table delete syntax is used
-		 * to delete the transient record from table a, and the corresponding
-		 * transient_timeout record from table b.
-		 */
-		$time = time();
-		$sql = "DELETE a, b FROM $wpdb->sitemeta a, $wpdb->sitemeta b
-			WHERE a.meta_key LIKE %s
-			AND a.meta_key NOT LIKE %s
-			AND b.meta_key = CONCAT( '_site_transient_timeout_', SUBSTRING( a.meta_key, 17 ) )
-			AND b.meta_value < %d";
-		$wpdb->query( $wpdb->prepare( $sql, $wpdb->esc_like( '_site_transient_' ) . '%', $wpdb->esc_like ( '_site_transient_timeout_' ) . '%', $time ) );
-	}
+	// Always clear expired transients
+	delete_expired_transients( true );
 
 	// 2.8.
 	if ( $wp_current_db_version < 11549 ) {
@@ -2084,7 +2050,7 @@ function get_alloptions_110() {
 }
 
 /**
- * Utility version of get_option that is private to install/upgrade.
+ * Utility version of get_option that is private to installation/upgrade.
  *
  * @ignore
  * @since 1.5.1
@@ -2282,8 +2248,9 @@ function dbDelta( $queries = '', $execute = true ) {
 					 */
 
 					// Extract type, name and columns from the definition.
+					// phpcs:disable Squiz.Strings.ConcatenationSpacing.PaddingFound -- don't remove regex indentation
 					preg_match(
-						  '/^'
+						'/^'
 						.   '(?P<index_type>'             // 1) Type of the index.
 						.       'PRIMARY\s+KEY|(?:UNIQUE|FULLTEXT|SPATIAL)\s+(?:KEY|INDEX)|KEY|INDEX'
 						.   ')'
@@ -2305,6 +2272,7 @@ function dbDelta( $queries = '', $execute = true ) {
 						$fld,
 						$index_matches
 					);
+					// phpcs:enable
 
 					// Uppercase the index type and normalize space characters.
 					$index_type = strtoupper( preg_replace( '/\s+/', ' ', trim( $index_matches['index_type'] ) ) );
@@ -2322,7 +2290,7 @@ function dbDelta( $queries = '', $execute = true ) {
 					foreach ( $index_columns as $id => &$index_column ) {
 						// Extract column name and number of indexed characters (sub_part).
 						preg_match(
-							  '/'
+							'/'
 							.   '`?'                      // Name can be escaped with a backtick.
 							.       '(?P<column_name>'    // 1) Name of the column.
 							.           '(?:[0-9a-zA-Z$_-]|[\xC2-\xDF][\x80-\xBF])+'

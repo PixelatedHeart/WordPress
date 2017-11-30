@@ -217,6 +217,7 @@ function wp_generate_attachment_metadata( $attachment_id, $file ) {
 		 * @since 4.7.0
 		 *
 		 * @param array $fallback_sizes An array of image size names.
+		 * @param array $metadata       Current attachment metadata.
 		 */
 		$fallback_sizes = apply_filters( 'fallback_intermediate_image_sizes', $fallback_sizes, $metadata );
 
@@ -416,7 +417,7 @@ function wp_read_image_metadata( $file ) {
 			if ( ! empty( $iptc['2#025'][0] ) ) { // keywords array
 				$meta['keywords'] = array_values( $iptc['2#025'] );
 			}
-		 }
+		}
 	}
 
 	/**

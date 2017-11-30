@@ -104,7 +104,6 @@
 	margin: 16px 0;
 	padding: 23px 10px 0;
 	border: 1px solid #e5e5e5;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.04);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.04);
 	background: #fff;
 	font-size: 13px;
@@ -154,7 +153,6 @@
 	position: absolute;
 	top: 8px;
 	right: 0;
-	-webkit-transition: all .1s ease-in-out;
 	transition: all .1s ease-in-out;
 }
 
@@ -318,15 +316,15 @@
 
 .community-events .spinner {
 	float: none;
-	margin: 0;
-	padding-bottom: 3px;
+	margin: 5px 2px 0;
+	vertical-align: top;
 }
 
 .community-events-errors[aria-hidden="true"],
-.community-events-errors *[aria-hidden="true"],
+.community-events-errors [aria-hidden="true"],
 .community-events-loading[aria-hidden="true"],
 .community-events[aria-hidden="true"],
-.community-events *[aria-hidden="true"] {
+.community-events [aria-hidden="true"] {
 	display: none;
 }
 
@@ -342,16 +340,20 @@
 
 .community-events-form .regular-text {
 	width: 40%;
-	height: 28px;
+	height: 29px;
+	margin: 0;
+	vertical-align: top;
 }
 
 .community-events li.event-none {
-	border-right: 4px solid #0070AE;
+	border-right: 4px solid #00a0d2;
 }
 
 .community-events-form label {
 	display: inline-block;
-	padding-bottom: 3px;
+	vertical-align: top;
+	line-height: 28px;
+	height: 28px;
 }
 
 .community-events .activity-block > p {
@@ -359,19 +361,22 @@
 	display: inline;
 }
 
+.community-events-toggle-location {
+	vertical-align: middle;
+}
+
 #community-events-submit {
-	margin-right: 2px;
+	margin-right: 3px;
+	margin-left: 3px;
 }
 
-.community-events .button-link:hover,
-.community-events .button-link:active {
-	color: #00a0d2;
-}
-
-.community-events-cancel.button.button-link {
-	color: #0073aa;
+/* Needs higher specificity than #dashboard-widgets .button-link */
+#dashboard-widgets .community-events-cancel.button-link {
+	vertical-align: top;
+	/* Same properties as the submit button for cross-browsers alignment. */
+	line-height: 26px;
+	height: 28px;
 	text-decoration: underline;
-	margin-right: 2px;
 }
 
 .community-events ul {
@@ -610,8 +615,6 @@ form.initial-form.quickpress-open input#title {
 
 #dashboard_quick_press input,
 #dashboard_quick_press textarea {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0;
 }
@@ -945,7 +948,6 @@ form.initial-form.quickpress-open input#title {
 
 #activity-widget #the-comment-list .comment,
 #activity-widget #the-comment-list .pingback {
-	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
 	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -1078,7 +1080,6 @@ a.rsswidget {
 	background-image: none;
 	border-color: #edc048;
 	color: #fff;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -1091,7 +1092,6 @@ a.rsswidget {
 	border-bottom-color: #f6e2ac;
 	background: transparent none;
 	color: #fff;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -1235,10 +1235,31 @@ a.rsswidget {
 
 	.community-events-toggle-location {
 		height: 38px;
+		vertical-align: baseline;
 	}
 
 	.community-events-form .regular-text {
-		height: 31px;
+		height: 32px;
+	}
+
+	#community-events-submit {
+		margin-bottom: 0;
+		/* Override .wp-core-ui .button */
+		vertical-align: top;
+	}
+
+	.community-events-form label,
+	#dashboard-widgets .community-events-cancel.button-link {
+		/* Same properties as the submit button for cross-browsers alignment. */
+		font-size: 14px;
+		line-height: normal;
+		height: auto;
+		padding: 6px 0;
+		border: 1px solid transparent;
+	}
+
+	.community-events .spinner {
+		margin-top: 7px;
 	}
 }
 

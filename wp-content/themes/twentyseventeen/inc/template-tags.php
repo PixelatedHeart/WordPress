@@ -84,7 +84,7 @@ function twentyseventeen_entry_footer() {
 							echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>';
 						}
 
-						if ( $tags_list ) {
+						if ( $tags_list && ! is_wp_error( $tags_list ) ) {
 							echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>';
 						}
 
@@ -110,8 +110,7 @@ if ( ! function_exists( 'twentyseventeen_edit_link' ) ) :
  * layout with multiple posts/pages shown gets confusing.
  */
 function twentyseventeen_edit_link() {
-
-	$link = edit_post_link(
+	edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
 			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
@@ -120,8 +119,6 @@ function twentyseventeen_edit_link() {
 		'<span class="edit-link">',
 		'</span>'
 	);
-
-	return $link;
 }
 endif;
 
