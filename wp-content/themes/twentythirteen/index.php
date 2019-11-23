@@ -16,6 +16,41 @@
 
 get_header(); ?>
 
+<?php
+
+ $timestamp = wp_next_scheduled( 'queue_cron_posts' );
+ echo date('Y-m-d h:i:s A');
+
+var_dump(wp_get_schedules());
+
+var_dump(_get_cron_array());
+
+	$timestamp = time();
+	$hora = date('G', $timestamp);
+	echo $hora;
+
+  if ($hora < 10 || $hora > 20 ) {
+    //We don't send information in these hours
+  } else {
+
+    // We get the first draft
+    $draft = get_posts( array(
+        'post_type'      => 'product',
+        'posts_per_page' => 1,
+        'post_status'    => 'draft',
+        'order'          => 'ASC'
+    ) );
+    
+    // If draft exists
+    if ($draft) {
+    
+      // We get the ID and we change the post_status to publish
+			echo 'entra';    
+    } // if ($draft)
+  } // if($hora)
+?>
+
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 		<?php if ( have_posts() ) : ?>

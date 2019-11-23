@@ -1,0 +1,1581 @@
+# Translation of Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-06-26 10:47:50+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#: gp-templates/translations.php:120
+msgid "Case sensitive"
+msgstr "Sensible a Mayúsculas/Minúsculas"
+
+#: gp-templates/project-delete.php:14
+msgid "Delete project &#8220;%s&#8221;"
+msgstr "Borrar proyecto &#8220;%s&#8221;"
+
+#: gp-templates/project-import.php:26
+msgid "Auto Detect"
+msgstr "Detectar automáticamente"
+
+#: gp-templates/settings.php:14 gp-templates/settings.php:30
+msgid "Your Settings"
+msgstr "Tus ajustes"
+
+#: gp-templates/project-delete.php:10
+msgid "Delete Project %s &lt; GlotPress"
+msgstr "Borrar proyecto %s &lt; GlotPress"
+
+#: gp-templates/settings.php:13
+msgid "Your Settings &lt; GlotPress"
+msgstr "Tus ajustes &lt; GlotPress"
+
+#: gp-templates/translation-set-delete.php:17
+msgid "Delete Translation Set"
+msgstr "Borrar grupo de traducciones"
+
+#: gp-templates/translation-set-delete.php:10
+msgid "Delete Translation Set &lt; %s &lt; %s &lt; GlotPress"
+msgstr "Borrar grupo de traducciones &lt; %s &lt; %s &lt; GlotPress"
+
+#: gp-templates/project-delete.php:17
+msgid "Note this will delete all translations, translation sets and child projects!"
+msgstr "Ten en cuenta que esto borrará todas las traducciones, grupos de traducciones y subproyectos!"
+
+#: gp-templates/translation-set-delete.php:20
+msgid "Note this will delete all translations associated with this set!"
+msgstr "Ten en cuenta que esto borrará todas las traducciones asociadas a este grupo!"
+
+#. translators: 1: %file%, 2: %line%, 3:
+#. https://trac.example.org/browser/%file%#L%line%
+#: gp-templates/project-branch.php:25 gp-templates/project-form.php:20
+msgid "Public URL to a source file in the project. You can use %1$s and %2$s. Ex. %3$s"
+msgstr "URL pública a un archivo origen del proyecto. Puedes usar %1$s y %2$s. Por ejemplo: %3$s"
+
+#: gp-templates/helper-functions.php:101
+msgid "Warning:"
+msgstr "Aviso:"
+
+#: gp-templates/glossary-view.php:21 gp-templates/translations.php:21
+msgid "(delete)"
+msgstr "(borrar)"
+
+#: gp-templates/glossary-delete.php:20
+msgid "Delete Glossary"
+msgstr "Borrar glosario"
+
+#: gp-templates/glossary-delete.php:24
+msgid "Note this will delete all entries associated with this glossary!"
+msgstr "Ten en cuenta que esto borrará todas las entradas asociadas a este glosario!"
+
+#: gp-templates/glossary-delete.php:15
+msgid "delete"
+msgstr "borrar"
+
+#: gp-templates/glossary-delete.php:10
+msgid "Delete Glossary &lt; GlotPress"
+msgstr "Borrar glosario &lt; GlotPress"
+
+#. translators: 1: %file%, 2: %line%, 3:
+#. https://trac.example.org/browser/%file%#L%line%
+#: gp-includes/template.php:548
+msgid "URL to a source file in the project. You can use %1$s and %2$s. Ex. %3$s"
+msgstr "URL a un archivo origen del proyecto.Puedes usar %1$s y %2$s. Por ejemplo: %3$s"
+
+#. translators: 1: type of a validation field, 2: name of a validation field,
+#. 3: validation rule
+#: gp-includes/validation.php:160
+msgid "The %1$s %2$s is invalid and should be %3$s!"
+msgstr "¡%1$s %2$s no son válidos, deberían ser %3$s!"
+
+#. translators: 1: type of a validation field, 2: name of a validation field,
+#. 3: validation rule
+#: gp-includes/validation.php:163
+msgid "The %1$s %2$s is invalid and should not be %3$s!"
+msgstr "¡%1$s %2$s no son válidos, deberían ser %3$s!"
+
+#: gp-includes/template.php:110
+msgid "Settings"
+msgstr "Configurar"
+
+#: gp-includes/routes/translation-set.php:125
+msgid "Error deleting translation set!"
+msgstr "Error al borrar grupo de traducciones!"
+
+#: gp-includes/routes/translation-set.php:130
+msgid "The translation set was deleted!"
+msgstr "El grupo de traducciones se ha borrado!"
+
+#: gp-includes/routes/project.php:248
+msgid "Error deleting project \"%s\"!"
+msgstr "Error al borrar el proyecto \"%s\"!"
+
+#: gp-includes/misc.php:476
+msgid "GlotPress Administrator"
+msgstr "Administrador de GlotPress"
+
+#: gp-includes/routes/glossary.php:24 gp-includes/routes/glossary.php:54
+msgid "Couldn&#8217;t find translation set with this ID."
+msgstr "No se pudo encontrar un grupo de traducciones con este ID."
+
+#: gp-includes/routes/glossary.php:167
+msgid "Error deleting glossary!"
+msgstr "Error al borrar el glosario!"
+
+#: gp-includes/routes/glossary.php:172
+msgid "The glossary was deleted!"
+msgstr "El glosario ha sido borrado!"
+
+#: gp-includes/route.php:155 gp-includes/routes/glossary-entry.php:107
+#: gp-includes/routes/glossary-entry.php:165 gp-includes/routes/original.php:25
+#: gp-includes/routes/translation.php:245
+#: gp-includes/routes/translation.php:480
+#: gp-includes/routes/translation.php:491
+msgid "An error has occurred. Please try again."
+msgstr "Se ha producido un error. Por favor, inténtelo de nuevo."
+
+#: gp-includes/misc.php:479
+msgid "Grant this user administrative privileges in GlotPress."
+msgstr "Dar a este usuario privilegios administrativos en GlotPress."
+
+#: glotpress.php:71
+msgid "&#151; You are running an unsupported version of PHP."
+msgstr "&#151; Se está ejecutando una versión de PHP no soportada."
+
+#: glotpress.php:72
+msgid "GlotPress requires PHP Version %s, please upgrade to run GlotPress. "
+msgstr "GlotPress requiere PHP Versión %s, por favor actualícela para ejecutar GlotPress. "
+
+#: gp-includes/misc.php:473
+msgid "Administrator"
+msgstr "Administrador"
+
+#. translators: %s: number of errors
+#: gp-includes/cli/import-originals.php:54 gp-includes/routes/project.php:158
+msgid "%s new string was not imported due to an error."
+msgid_plural "%s new strings were not imported due to an error."
+msgstr[0] "%s cadena nueva no se importó debido a un error."
+msgstr[1] "%s cadenas nuevas no se importaron debido a un error."
+
+#: glotpress.php:129
+msgid "&#151; You are running an unsupported permalink structure."
+msgstr "&#151; Estás utilizando una estructura de enlaces permanentes incompatible."
+
+#. translators: %s: URL to permalink settings
+#: glotpress.php:131
+msgid "GlotPress requires a custom permalink structure to be enabled. Please go to <a href=\"%s\">Permalink Settings</a> and enable an option other than Plain. "
+msgstr "GlotPress requiere la activación de una estructura de enlaces permanentes personalizada. Por favor, ve a <a href=\"%s\">Ajustes -> Enlaces permanentes</a> y activa una opción distinta que no sea la simple."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/glotpress/"
+msgstr "https://es.wordpress.org/plugins/glotpress/"
+
+#. Description of the plugin/theme
+msgid "GlotPress is a tool to help translators collaborate."
+msgstr "GlotPress es una herramienta para ayudar a traducir colaborativamente."
+
+#. Author of the plugin/theme
+msgid "the GlotPress team"
+msgstr "el equipo de GlotPress"
+
+#. Author URI of the plugin/theme
+msgid "http://glotpress.org"
+msgstr "http://glotpress.org"
+
+#. #-#-#-#-#  tmp-glotpress.pot (GlotPress 2.2.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: gp-includes/misc.php:469
+msgid "GlotPress"
+msgstr "GlotPress"
+
+#. translators: combined name for locales: 1: name in English, 2: native name
+#: locales/locales.php:59
+msgctxt "locales"
+msgid "%1$s/%2$s"
+msgstr "%1$s/%2$s"
+
+#. translators: 1: export 2: what to export dropdown (all/filtered) 3: export
+#. format
+#: gp-templates/translations.php:260
+msgid "%1$s %2$s as %3$s"
+msgstr "%1$s %2$s como %3$s"
+
+#: gp-templates/translations.php:257
+msgctxt "export choice"
+msgid "all current"
+msgstr "todas las actuales"
+
+#: gp-templates/translations.php:257
+msgctxt "export choice"
+msgid "only matching the filter"
+msgstr "solo las que se ajustan al filtro"
+
+#: gp-templates/translations.php:252
+msgid "Export"
+msgstr "Exportar"
+
+#: gp-templates/translations.php:242
+msgid "with warnings"
+msgstr "con avisos"
+
+#: gp-templates/project-import.php:34 gp-templates/translations.php:225
+msgid "Current"
+msgstr "Actual"
+
+#: gp-templates/translations.php:234
+msgid "Old"
+msgstr "Antigua"
+
+#: gp-templates/translations.php:208
+msgid "No translations were found!"
+msgstr "¡No se encontraron traducciones!"
+
+#: gp-templates/translations.php:215
+msgid "Legend:"
+msgstr "Leyenda:"
+
+#. Translators: Priority
+#: gp-templates/translations.php:190
+msgid "Prio"
+msgstr "Prioridad"
+
+#: gp-templates/translations.php:152
+msgid "Order:"
+msgstr "Orden:"
+
+#: gp-templates/translations.php:136
+msgctxt "sort by"
+msgid "By:"
+msgstr "Por:"
+
+#: gp-templates/translations.php:118
+msgid "With comment"
+msgstr "Con comentarios"
+
+#: gp-templates/translations.php:119
+msgid "With context"
+msgstr "En contexto"
+
+#: gp-templates/translations.php:112
+msgid "Without current translation"
+msgstr "Sin traducción actual"
+
+#: gp-templates/translations.php:113
+msgid "Any"
+msgstr "Cualquiera"
+
+#: gp-templates/translations.php:111
+msgid "Rejected"
+msgstr "Rechazado"
+
+#: gp-templates/translations.php:110
+msgid "Waiting approval"
+msgstr "Esperando aprobación"
+
+#: gp-templates/translations.php:108
+msgid "Current only"
+msgstr "Solo la actual"
+
+#: gp-templates/translations.php:109
+msgid "Approved, but obsoleted by another string"
+msgstr "Aprobado, pero obsoleto por otra cadena"
+
+#: gp-templates/translations.php:107
+msgid "Current/waiting/fuzzy + untranslated (All)"
+msgstr "Actual/en espera/confusos + sin traducir (Todos)"
+
+#: gp-templates/translations.php:97
+msgid "User:"
+msgstr "Usuario:"
+
+#: gp-templates/translations.php:96
+msgid "Term:"
+msgstr "Término:"
+
+#: gp-templates/translations.php:86
+msgid "Warnings"
+msgstr "Avisos"
+
+#: gp-templates/translations.php:78
+msgid "random"
+msgstr "al azar"
+
+#: gp-templates/translations.php:76
+msgid "All"
+msgstr "Todo"
+
+#: gp-templates/translations.php:73
+msgid "Sort &darr;"
+msgstr "Ordenar &darr;"
+
+#: gp-templates/translations.php:72
+msgid "Filter &darr;"
+msgstr "Filtrar &darr;"
+
+#: gp-templates/translations.php:36
+msgid "Set Priority"
+msgstr "Establecer prioridad"
+
+#: gp-templates/translations.php:64
+msgid "Apply"
+msgstr "Aplicar"
+
+#: gp-templates/translations.php:32
+msgid "Bulk Actions"
+msgstr "Acciones en masa"
+
+#: gp-templates/translations.php:23
+msgid "glossary"
+msgstr "glosario"
+
+#: gp-templates/translations.php:19
+msgid "Translation of %s"
+msgstr "Traducción de %s"
+
+#: gp-templates/translations.php:8 gp-templates/translations.php:133
+msgid "Filter"
+msgstr "Filtrar"
+
+#: gp-templates/translations.php:8 gp-templates/translations.php:182
+msgid "Sort"
+msgstr "Ordenar"
+
+#: gp-templates/translation-set-new.php:10
+msgid "Create New Translation Set"
+msgstr "Crear nuevo grupo de traducciones"
+
+#: gp-templates/translations.php:2
+msgid "Translations &lt; %s &lt; %s &lt; GlotPress"
+msgstr "Traducciones &lt; %s &lt; %s &lt; GlotPress"
+
+#: gp-templates/translation-set-form.php:5
+msgid "Use as name"
+msgstr "Usar como nombre"
+
+#: gp-templates/translation-set-new.php:2
+msgid "Create New Translation Set &lt; GlotPress"
+msgstr "Crear nuevo grupo de traducciones &lt; GlotPress"
+
+#: gp-templates/translation-set-edit.php:13
+msgid "Edit Translation Set"
+msgstr "Editar grupo de traducciones"
+
+#: gp-templates/translation-set-edit.php:2
+msgid "Edit Translation Set &lt; %s &lt; %s &lt; GlotPress"
+msgstr "Editar grupo de traducciones &lt; %s &lt; %s &lt; GlotPress"
+
+#: gp-templates/translation-row.php:215
+msgid "Suggest new translation &rarr;"
+msgstr "Sugerir nueva traducción &rarr;"
+
+#: gp-templates/translation-row.php:207
+msgid "All translations of this original"
+msgstr "Todas las traducciones de este original"
+
+#: gp-templates/translation-row.php:215
+msgid "Add translation &rarr;"
+msgstr "Añadir traducción &rarr;"
+
+#: gp-templates/translation-row.php:205
+msgid "Permalink to this original"
+msgstr "Enlace permanente a este original"
+
+#: gp-templates/translation-row.php:207
+msgid "Link to the history of translations of this original"
+msgstr "Enlace al historial de traducciones de este original"
+
+#: gp-templates/translation-row.php:203
+msgid "Permalink to this translation"
+msgstr "Enlace permanente a esta traducción"
+
+#: gp-templates/translation-row.php:200
+msgid "More links:"
+msgstr "Más enlaces:"
+
+#: gp-templates/translation-row.php:150
+msgid "Translated by:"
+msgstr "Traducido por:"
+
+#: gp-templates/translation-row.php:172
+msgid "Priority of the original:"
+msgstr "Prioridad del original:"
+
+#: gp-templates/translation-row.php:144
+msgid "Date added:"
+msgstr "Fecha de inclusión:"
+
+#: gp-templates/translation-row.php:138
+msgid "Comment:"
+msgstr "Comentario:"
+
+#: gp-templates/translation-row.php:125
+msgid "Priority:"
+msgstr "Prioridad:"
+
+#: gp-templates/translation-row.php:132
+msgid "Context:"
+msgstr "Contexto:"
+
+#: gp-templates/translation-row.php:118
+msgid "Reject Suggestion"
+msgstr "Rechazar sugerencia"
+
+#: gp-templates/translation-row.php:115 gp-templates/translations.php:34
+msgid "Reject"
+msgstr "Rechazar"
+
+#: gp-templates/translation-row.php:112 gp-templates/translations.php:33
+msgid "Approve"
+msgstr "Aprobar"
+
+#: gp-templates/project-import.php:43 gp-templates/translation-row.php:106
+#: gp-templates/translations.php:103
+msgid "Status:"
+msgstr "Estado:"
+
+#: gp-templates/translation-row.php:94
+msgid "This plural form is used for numbers like: %s"
+msgstr "Esta forma plural se usa para números como: %s"
+
+#: gp-templates/translation-row.php:81 gp-templates/translation-row.php:90
+msgid "Plural: %s"
+msgstr "Plural: %s"
+
+#: gp-templates/translation-row.php:78 gp-templates/translation-row.php:88
+msgid "Singular: %s"
+msgstr "Singular: %s"
+
+#: gp-templates/translation-row.php:36
+msgid "You are not allowed to add a translation."
+msgstr "No tienes permisos para añadir una traducción."
+
+#: gp-templates/translation-row.php:39
+msgid "You <a href=\"%s\">have to login</a> to add a translation."
+msgstr "Tienes que <a href=\"%s\">acceder</a> para añadir una traducción."
+
+#: gp-templates/translation-row.php:26
+msgid "Context: %s"
+msgstr "Contexto: %s"
+
+#: gp-templates/translation-row.php:33
+msgid "Double-click to add"
+msgstr "Doble clic para añadir"
+
+#: gp-templates/redirect.php:1
+msgid "Redirecting to: %s..."
+msgstr "Redirigiendo a: %s…"
+
+#: gp-templates/translation-row.php:20
+msgid "Priority: %s"
+msgstr "Prioridad: %s"
+
+#: gp-templates/projects.php:17
+msgid "Create a New Project"
+msgstr "Crear un nuevo proyecto"
+
+#: gp-templates/projects.php:20
+msgid "Projects by language"
+msgstr "Proyectos por idioma"
+
+#: gp-templates/projects.php:2
+msgid "Projects &lt; GlotPress"
+msgstr "Proyectos &lt; GlotPress"
+
+#: gp-templates/project.php:146
+msgid "Personal project options &uarr;"
+msgstr "Ajustes personales del proyecto &uarr;"
+
+#: gp-templates/project.php:153
+msgid "Project actions &uarr;"
+msgstr "Acciones del proyecto &uarr;"
+
+#: gp-templates/project.php:107
+msgid "There are no translations of this project."
+msgstr "No hay traducciones para este proyecto."
+
+#: gp-templates/project.php:113
+msgid "Sub-projects"
+msgstr "Subproyectos"
+
+#: gp-templates/project.php:57
+msgid "Extra"
+msgstr "Extra"
+
+#: gp-templates/project.php:51
+msgctxt "locale translation percent header"
+msgid "%"
+msgstr "%"
+
+#: gp-templates/project-permissions.php:23
+#: gp-templates/project-permissions.php:48 gp-templates/project.php:50
+#: gp-templates/translation-set-form.php:2
+msgid "Locale"
+msgstr "Locale"
+
+#: gp-templates/project.php:35 gp-templates/project.php:152
+msgid "Project actions &darr;"
+msgstr "Acciones del proyecto &darr;"
+
+#: gp-templates/project.php:46
+msgid "Translations"
+msgstr "Traducciones"
+
+#: gp-templates/project.php:2
+msgid "%s &lt; GlotPress"
+msgstr "%s &lt; GlotPress"
+
+#: gp-templates/project-permissions.php:74
+msgid "Locale:"
+msgstr "Idioma:"
+
+#: gp-templates/project-permissions.php:76
+msgid "Translation set slug:"
+msgstr "Slug del grupo de traducción:"
+
+#: gp-templates/project-permissions.php:72
+msgid "Username:"
+msgstr "Nombre de usuario:"
+
+#: gp-templates/project-permissions.php:70
+msgid "Add a validator for this project"
+msgstr "Añade un validador para este proyecto"
+
+#: gp-templates/project-permissions.php:67
+msgid "No validators defined for this project."
+msgstr "No se han definido validadores para este proyecto."
+
+#: gp-templates/project-permissions.php:42
+msgid "Validators for parent projects"
+msgstr "Validadores de los proyectos superiores"
+
+#: gp-templates/project-permissions.php:15
+msgid "Validators for this project"
+msgstr "Validadores de este proyecto"
+
+#: gp-templates/project-permissions.php:10
+#: gp-templates/project-permissions.php:80
+msgid "Add"
+msgstr "Añadir"
+
+#: gp-templates/project-permissions.php:8
+msgid "Validators"
+msgstr "Validadores"
+
+#: gp-templates/project-new.php:4 gp-templates/project-new.php:8
+msgid "Create New Project"
+msgstr "Crear nuevo proyecto"
+
+#: gp-templates/project-permissions.php:2
+msgid "Permissions &lt; %s &lt; GlotPress"
+msgstr "Permisos &lt; %s &lt; GlotPress"
+
+#: gp-templates/project-mass-create-sets.php:21
+msgid "Create Translation Sets"
+msgstr "Crear grupos de traducciones"
+
+#: gp-templates/project-new.php:2
+msgid "Create New Project &lt; GlotPress"
+msgstr "Crear nuevo proyecto &lt; GlotPress"
+
+#: gp-templates/project-mass-create-sets.php:12
+msgid ""
+"Here you can mass-create translation sets in this project.\n"
+"The list of translation sets will be mirrored with the sets of a project you choose.\n"
+"Usually this is one of the parent projects."
+msgstr ""
+"Aquí puedes crear grupos de traducciones en masa para este proyecto.\n"
+"La lista de las traducciones se duplicará con las de un proyecto que elijas.\n"
+"Normalmente suele ser uno de los proyectos superiores."
+
+#: gp-templates/project-mass-create-sets.php:17
+msgid "Project to take translation sets from:"
+msgstr "Proyecto del que obtener grupos de traducciones:"
+
+#: gp-templates/project-mass-create-sets.php:7
+msgid "Loading translation sets to create&hellip;"
+msgstr "Cargando grupos de traducciones para crear&hellip;"
+
+#: gp-templates/project-mass-create-sets.php:2
+msgid "Mass-create Translation Sets &lt; %s &lt; GlotPress"
+msgstr "Creación en masa de grupo de traducciones &lt; %s &lt; GlotPress"
+
+#: gp-templates/project-import.php:40
+msgid "Format:"
+msgstr "Formato:"
+
+#: gp-templates/project-import.php:19 gp-templates/translations.php:249
+msgid "Import Translations"
+msgstr "Importar traducciones"
+
+#: gp-templates/project-import.php:7
+msgid "Import Translations &lt; %s &lt; GlotPress"
+msgstr "Importar traducciones &lt; %s &lt; GlotPress"
+
+#: gp-includes/template.php:505 gp-templates/project-import.php:19
+msgid "Import Originals"
+msgstr "Importar originales"
+
+#: gp-templates/project-import.php:3
+msgid "Import Originals &lt; %s &lt; GlotPress"
+msgstr "Importar originales &lt; %s &lt; GlotPress"
+
+#: gp-templates/project-form.php:30 gp-templates/project.php:10
+#: gp-templates/project.php:119
+msgid "Active"
+msgstr "Activar"
+
+#: gp-templates/project-form.php:27
+msgid "Parent Project"
+msgstr "Proyecto superior"
+
+#: gp-templates/project-form.php:6 gp-templates/project-permissions.php:24
+#: gp-templates/project-permissions.php:49
+#: gp-templates/translation-set-form.php:12
+msgid "Slug"
+msgstr "Slug"
+
+#: gp-templates/project-edit.php:6
+msgid "Edit project \"%s\""
+msgstr "Editar proyecto \"%s\""
+
+#: gp-templates/project-form.php:2 gp-templates/translation-set-form.php:8
+msgid "Name"
+msgstr "Nombre"
+
+#: gp-templates/project-branch.php:33
+msgid "Branch project"
+msgstr "Rama del proyecto"
+
+#: gp-templates/project-edit.php:2
+msgid "Edit Project %s &lt; GlotPress"
+msgstr "Editar proyecto %s &lt; GlotPress"
+
+#: gp-templates/project-branch.php:16 gp-templates/project-form.php:9
+msgid "If you leave the slug empty, it will be derived from the name."
+msgstr "Si dejas el slug vacío se usará uno desde el nombre."
+
+#: gp-templates/project-branch.php:13
+msgid "New Slug"
+msgstr "Nuevo slug"
+
+#: gp-templates/project-branch.php:7
+msgid "Here you can branch out this project: everything will be duplicated into a new project for you."
+msgstr "Aquí puedes crear una rama de este proyecto: todo se duplicará en un nuevo proyecto."
+
+#: gp-templates/project-branch.php:9
+msgid "New branch name"
+msgstr "Nuevo nombre de rama"
+
+#: gp-templates/project-branch.php:2
+msgid "Branch Project %s &lt; GlotPress"
+msgstr "Rama del proyecto %s &lt; GlotPress"
+
+#: gp-templates/project-branch.php:6
+msgid "Branch project \"%s\""
+msgstr "Rama del proyecto \"%s\""
+
+#: gp-templates/settings-edit.php:46 gp-templates/translations.php:157
+msgid "Descending"
+msgstr "Descendente"
+
+#: gp-templates/settings-edit.php:40
+msgid "Default Sort Order:"
+msgstr "Orden por defecto:"
+
+#: gp-templates/settings-edit.php:45 gp-templates/translations.php:156
+msgid "Ascending"
+msgstr "Ascendente"
+
+#: gp-includes/misc.php:546
+msgid "Random"
+msgstr "Aleatorio"
+
+#: gp-includes/misc.php:542
+msgid "Filename in source"
+msgstr "Nombre del archivo en origen"
+
+#: gp-includes/misc.php:538
+msgid "Priority"
+msgstr "Prioridad"
+
+#: gp-includes/misc.php:530 gp-templates/translations.php:191
+msgid "Original string"
+msgstr "Cadena original"
+
+#: gp-includes/misc.php:534 gp-templates/translations.php:192
+msgid "Translation"
+msgstr "Traducción"
+
+#: gp-includes/misc.php:526
+msgid "Date added (translation)"
+msgstr "Fecha de inclusión (traducción)"
+
+#: gp-templates/settings-edit.php:32
+msgid "Default Sort By:"
+msgstr "Ordenar por defecto por:"
+
+#: gp-includes/misc.php:522
+msgid "Date added (original)"
+msgstr "Fecha de inclusión (original)"
+
+#: gp-templates/profile-public.php:66
+msgid "%s is not validating any projects!"
+msgstr "¡%s no está validando ningún proyecto!"
+
+#: gp-templates/settings-edit.php:28
+msgid "Number of items per page:"
+msgstr "Número de elementos por página:"
+
+#: gp-templates/profile-public.php:48
+msgid "last translation about %s ago (UTC)"
+msgstr "última traducción hace %s (UTC)"
+
+#: gp-templates/profile-public.php:55
+msgid "Validator to"
+msgstr "Validador de"
+
+#: gp-templates/profile-public.php:37
+msgid "Recent Projects"
+msgstr "Proyectos recientes"
+
+#: gp-templates/profile-public.php:45
+msgid "%s contribution"
+msgid_plural "%s contributions"
+msgstr[0] "%s colaboración"
+msgstr[1] "%s colaboraciones"
+
+#: gp-templates/profile-public.php:26
+msgid "Member Since"
+msgstr "Miembro desde"
+
+#: gp-templates/profile-public.php:2
+msgid "Profile &lt; GlotPress"
+msgstr "Perfil &lt; GlotPress"
+
+#. translators: 1: display name of a user, 2: language
+#: gp-templates/profile-public.php:23
+msgid "%1$s is a polyglot who contributes to %2$s"
+msgstr "%1$s es un políglota que colabora en %2$s"
+
+#. translators: 1: display name of a user, 2: language, 3: language
+#: gp-templates/profile-public.php:20
+msgid "%1$s is a polyglot who knows %2$s but also knows %3$s."
+msgstr "%1$s es un políglota que sabe %2$s y también sabe %3$s."
+
+#: gp-templates/locales.php:20
+msgid "Language code"
+msgstr "Código de idioma"
+
+#: gp-templates/locales.php:19
+msgid "Native name"
+msgstr "Nombre nativo"
+
+#: gp-templates/locales.php:18
+msgid "Name (in English)"
+msgstr "Nombre (en Inglés)"
+
+#: gp-templates/locales.php:2
+msgid "Locales &lt; GlotPress"
+msgstr "Idiomas &lt; GlotPress"
+
+#: gp-templates/locales.php:10
+msgid "Locales and Languages"
+msgstr "Idiomas y traducciones"
+
+#: gp-templates/locales.php:12
+msgid "Filter:"
+msgstr "Filtrar:"
+
+#: gp-templates/locales.php:12
+msgid "search"
+msgstr "buscar"
+
+#: gp-templates/locale.php:41 gp-templates/project-import.php:37
+#: gp-templates/project.php:55 gp-templates/translations.php:82
+#: gp-templates/translations.php:228
+msgid "Waiting"
+msgstr "En espera"
+
+#: gp-templates/locale.php:50
+msgid "%d strings"
+msgstr "%d cadenas"
+
+#: gp-templates/locale.php:51
+msgid "%d%% translated"
+msgstr "%d%% traducido"
+
+#: gp-templates/locale.php:78
+msgid "All projects"
+msgstr "Todos los proyectos"
+
+#: gp-templates/locale.php:36 gp-templates/translation-set-form.php:15
+msgid "Project"
+msgstr "Proyecto"
+
+#: gp-templates/locale.php:37
+msgid "Set / Sub Project"
+msgstr "Crear / Subproyecto"
+
+#: gp-templates/locale.php:38 gp-templates/project.php:52
+msgid "Translated"
+msgstr "Traducido"
+
+#: gp-templates/locale.php:39 gp-templates/project.php:53
+#: gp-templates/translations.php:84 gp-templates/translations.php:231
+msgid "Fuzzy"
+msgstr "Confusos"
+
+#: gp-templates/locale.php:40 gp-templates/project.php:54
+#: gp-templates/translations.php:77
+msgid "Untranslated"
+msgstr "Sin traducir"
+
+#: gp-templates/helper-functions.php:130
+msgid "untranslated"
+msgstr "sin traducir"
+
+#: gp-templates/helper-functions.php:149
+msgid "References:"
+msgstr "Referencias:"
+
+#: gp-templates/locale.php:2
+msgid "Projects translated to %s &lt; GlotPress"
+msgstr "Projectos traducidos a %s &lt; GlotPress"
+
+#: gp-templates/locale.php:16
+msgid "Active Projects translated to %s"
+msgstr "Proyectos activos traducidos a %s"
+
+#: gp-templates/locale.php:26
+msgid "No active projects found."
+msgstr "No hay proyectos activos."
+
+#: gp-templates/helper-functions.php:104
+msgid "Discard"
+msgstr "Descartar"
+
+#: gp-templates/helper-functions.php:117
+msgid "You are not allowed to edit this translation."
+msgstr "No tienes permisos para editar esta traducción."
+
+#: gp-templates/helper-functions.php:120
+msgid "You <a href=\"%s\">have to log in</a> to edit this translation."
+msgstr "Tienes que <a href=\"%s\">acceder</a> para modificar esta traducción."
+
+#: gp-templates/helper-functions.php:38
+msgid "New line"
+msgstr "Nueva línea"
+
+#: gp-templates/helper-functions.php:39
+msgid "Tab character"
+msgstr "Carácter de tabulación"
+
+#: gp-templates/glossary-view.php:33
+msgctxt "glossary entry"
+msgid "Item"
+msgstr "Elemento"
+
+#: gp-templates/glossary-view.php:53
+msgid "No glossary entries yet."
+msgstr "Aún no hay nada en el glosario."
+
+#: gp-templates/glossary-view.php:62
+msgid "Create an entry"
+msgstr "Crea una entrada"
+
+#: gp-templates/glossary-view.php:100
+msgid "Export as CSV"
+msgstr "Exportar como CSV"
+
+#: gp-templates/glossary-new.php:19 gp-templates/glossary-view.php:85
+#: gp-templates/project-new.php:12 gp-templates/translation-set-new.php:14
+msgid "Create"
+msgstr "Crear"
+
+#: gp-templates/glossary-view.php:2
+msgid "View Glossary &lt; GlotPress"
+msgstr "Ver Glosario &lt; GlotPress"
+
+#: gp-templates/glossary-view.php:9
+msgid "Are you sure you want to delete this entry?"
+msgstr "¿Estás seguro de querer borrar esta entrada?"
+
+#: gp-templates/glossary-view.php:19
+msgctxt "{language} / { project name}"
+msgid "Glossary for %1$s translation of %2$s"
+msgstr "Glosario de %1$s traducción de %2$s"
+
+#: gp-templates/glossary-view.php:20 gp-templates/project.php:6
+#: gp-templates/translations.php:20
+msgid "(edit)"
+msgstr "(editar)"
+
+#: gp-templates/glossary-new.php:2
+msgid "Create New Glossary &lt; GlotPress"
+msgstr "Crear nuevo glosario &lt; GlotPress"
+
+#: gp-templates/glossary-new.php:6 gp-templates/translations.php:25
+msgid "Create Glossary"
+msgstr "Crear glosario"
+
+#: gp-templates/glossary-new.php:11
+msgid "Create New Glossary"
+msgstr "Crear nuevo glosario"
+
+#: gp-templates/glossary-new.php:14
+msgid "Description (optional)"
+msgstr "Descripción (opcional)"
+
+#: gp-templates/glossary-entry-row.php:63
+msgctxt "delete glossary entry"
+msgid "Delete"
+msgstr "Borrar"
+
+#: gp-templates/glossary-import.php:2
+msgid "Import into Glossary &lt; GlotPress"
+msgstr "Importar en el glosario &lt; GlotPress"
+
+#: gp-templates/glossary-import.php:7
+msgid "import"
+msgstr "importar"
+
+#: gp-templates/glossary-import.php:12
+msgid "Import Glossary Entries"
+msgstr "Importar entradas del glosario"
+
+#: gp-templates/glossary-import.php:14
+msgid "Use this form to bulk upload glossary entries. The entries should be stored in a CSV file, matching the custom glossary format from <a href=\"%s\">Google Translator Toolkit</a>."
+msgstr "Utiliza este formulario para subir en masa entradas de glosario. Las entradas deberán estar almacenadas en un archivo CSV, ajustándose al formato a medida del glosario del <a href=\"%s\">Manual del traductor de Google</a>."
+
+#: gp-templates/glossary-import.php:19 gp-templates/project-import.php:22
+msgid "Import File:"
+msgstr "Importar archivo:"
+
+#: gp-templates/glossary-import.php:30 gp-templates/glossary-view.php:97
+#: gp-templates/project-import.php:55
+msgid "Import"
+msgstr "Importar"
+
+#: gp-templates/glossary-entry-row.php:46
+msgid "Last Modified:"
+msgstr "Última modificación:"
+
+#: gp-templates/glossary-entry-row.php:51
+msgctxt "by author"
+msgid "By:"
+msgstr "Por:"
+
+#: gp-templates/glossary-entry-row.php:61
+msgid "Actions:"
+msgstr "Acciones:"
+
+#: gp-templates/glossary-entry-row.php:20 gp-templates/glossary-view.php:66
+msgctxt "glossary entry"
+msgid "Original term:"
+msgstr "Término original:"
+
+#: gp-templates/glossary-entry-row.php:22 gp-templates/glossary-view.php:34
+#: gp-templates/glossary-view.php:68
+msgctxt "glossary entry"
+msgid "Part of speech"
+msgstr "Parte de la pronunciación"
+
+#: gp-templates/glossary-entry-row.php:31 gp-templates/glossary-view.php:36
+#: gp-templates/glossary-view.php:80
+msgctxt "glossary entry"
+msgid "Comments"
+msgstr "Comentarios"
+
+#: gp-templates/glossary-entry-row.php:33 gp-templates/glossary-view.php:35
+#: gp-templates/glossary-view.php:78
+msgctxt "glossary entry"
+msgid "Translation"
+msgstr "Traducción"
+
+#: gp-templates/glossary-entry-row.php:44 gp-templates/translation-row.php:104
+msgid "Meta"
+msgstr "Meta"
+
+#: gp-templates/glossary-entry-row.php:11 gp-templates/translation-row.php:62
+msgid "Details"
+msgstr "Detalles"
+
+#: gp-templates/glossary-delete.php:29 gp-templates/glossary-edit.php:24
+#: gp-templates/glossary-entry-row.php:39 gp-templates/glossary-new.php:20
+#: gp-templates/project-delete.php:21 gp-templates/project-edit.php:11
+#: gp-templates/project-import.php:56 gp-templates/project-new.php:13
+#: gp-templates/translation-row.php:218
+#: gp-templates/translation-set-delete.php:24
+#: gp-templates/translation-set-edit.php:18
+#: gp-templates/translation-set-new.php:15
+msgid "or"
+msgstr "o"
+
+#: gp-templates/glossary-edit.php:23 gp-templates/glossary-entry-row.php:39
+#: gp-templates/project-edit.php:10 gp-templates/translation-set-edit.php:17
+msgid "Save"
+msgstr "Guardar"
+
+#: gp-templates/glossary-edit.php:16 gp-templates/glossary-new.php:14
+#: gp-templates/project-branch.php:18 gp-templates/project-form.php:12
+msgid "can include HTML"
+msgstr "puede incluir HTML"
+
+#: gp-templates/glossary-edit.php:16 gp-templates/project-branch.php:18
+#: gp-templates/project-form.php:12
+msgid "Description"
+msgstr "Descripción"
+
+#: gp-templates/glossary-edit.php:12
+msgid "Edit Glossary"
+msgstr "Editar Glosario"
+
+#: gp-templates/glossary-delete.php:14 gp-templates/glossary-edit.php:6
+#: gp-templates/glossary-import.php:6 gp-templates/glossary-view.php:6
+msgid "Glossary"
+msgstr "Glosario"
+
+#: gp-templates/glossary-edit.php:7
+msgid "edit"
+msgstr "editar"
+
+#: gp-templates/footer.php:3
+msgid "Proudly powered by %s."
+msgstr "Creado con orgullo gracias a %s."
+
+#: gp-templates/glossary-edit.php:2
+msgid "Edit Glossary &lt; GlotPress"
+msgstr "Editar glosario &lt; GlotPress"
+
+#: gp-includes/warnings.php:184
+msgid "Translation should not end on newline."
+msgstr "La traducción no debería terminar en una nueva línea."
+
+#: gp-templates/404.php:2
+msgid "Not Found &lt; GlotPress"
+msgstr "No encontrado &lt; GlotPress"
+
+#: gp-includes/warnings.php:77
+msgid "Lengths of source and translation differ too much."
+msgstr "La longitud del original y la traducción difieren demasiado."
+
+#: gp-includes/warnings.php:88
+msgid "Missing tags from translation."
+msgstr "Etiquetas perdidas en la traducción."
+
+#: gp-includes/warnings.php:91
+msgid "Too many tags in translation."
+msgstr "Demasiadas etiquetas en la traducción."
+
+#: gp-includes/warnings.php:143
+msgid "Missing %s placeholder in translation."
+msgstr "Localizador %s perdido en la traducción."
+
+#: gp-includes/warnings.php:146
+msgid "Extra %s placeholder in translation."
+msgstr "Localizador %s adicional en la traducción."
+
+#: gp-includes/warnings.php:163
+msgid "Original and translation should both begin on newline."
+msgstr "El original y la traducción deberían empezar en una nueva línea."
+
+#: gp-includes/warnings.php:170
+msgid "Translation should not begin on newline."
+msgstr "La traducción no debería empezar en una nueva línea."
+
+#: gp-includes/warnings.php:177
+msgid "Original and translation should both end on newline."
+msgstr "El original y la traducción deberían terminar en una nueva línea."
+
+#: gp-includes/validation.php:123
+msgid "Non-existent validator: %s"
+msgstr "Validador no existente: %s"
+
+#: gp-includes/things/glossary-entry.php:49
+msgctxt "part-of-speech"
+msgid "interjection"
+msgstr "interjección"
+
+#: gp-includes/things/glossary-entry.php:50
+msgctxt "part-of-speech"
+msgid "conjunction"
+msgstr "conjunción"
+
+#: gp-includes/things/glossary-entry.php:51
+msgctxt "part-of-speech"
+msgid "preposition"
+msgstr "preposición"
+
+#: gp-includes/things/glossary-entry.php:52
+msgctxt "part-of-speech"
+msgid "pronoun"
+msgstr "pronombre"
+
+#: gp-includes/things/glossary-entry.php:53
+msgctxt "part-of-speech"
+msgid "expression"
+msgstr "expresión"
+
+#: gp-includes/things/glossary-entry.php:48
+msgctxt "part-of-speech"
+msgid "adverb"
+msgstr "Adverbio"
+
+#: gp-includes/template.php:566
+msgid "Copy from original"
+msgstr "Copiar del original"
+
+#: gp-includes/things/glossary-entry.php:47
+msgctxt "part-of-speech"
+msgid "adjective"
+msgstr "adjetivo"
+
+#: gp-includes/things/glossary-entry.php:45
+msgctxt "part-of-speech"
+msgid "noun"
+msgstr "sustantivo"
+
+#: gp-includes/things/glossary-entry.php:46
+msgctxt "part-of-speech"
+msgid "verb"
+msgstr "verbo"
+
+#: gp-includes/template.php:556
+msgid "Save &rarr;"
+msgstr "Guardar &rarr;"
+
+#: gp-includes/template.php:557 gp-templates/glossary-delete.php:29
+#: gp-templates/glossary-edit.php:24 gp-templates/glossary-entry-row.php:39
+#: gp-templates/glossary-new.php:20 gp-templates/project-delete.php:21
+#: gp-templates/project-edit.php:11 gp-templates/project-import.php:56
+#: gp-templates/project-new.php:13 gp-templates/translation-row.php:218
+#: gp-templates/translation-set-delete.php:24
+#: gp-templates/translation-set-edit.php:18
+#: gp-templates/translation-set-new.php:15
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: gp-includes/template.php:539 gp-templates/project.php:145
+msgid "Personal project options &darr;"
+msgstr "Ajustes personales del proyecto &darr;"
+
+#: gp-includes/template.php:543 gp-templates/project-branch.php:20
+#: gp-templates/project-form.php:15
+msgid "Source file URL"
+msgstr "URL del archivo original"
+
+#: gp-includes/template.php:508 gp-templates/translation-set-new.php:3
+msgid "New Translation Set"
+msgstr "Nuevo grupo de traducción"
+
+#: gp-includes/template.php:509 gp-templates/project-mass-create-sets.php:11
+msgid "Mass-create Translation Sets"
+msgstr "Creación en masa de grupos de traducciones"
+
+#: gp-includes/template.php:510
+msgid "Branch Project"
+msgstr "Rama del proyecto"
+
+#: gp-includes/template.php:507
+msgid "New Sub-Project"
+msgstr "Nuevo sub proyecto"
+
+#: gp-includes/template.php:511
+msgid "Delete Project"
+msgstr "Borrar proyecto"
+
+#: gp-includes/template.php:367
+msgid "&mdash; Locale &mdash;"
+msgstr "&mdash; Idioma &mdash;"
+
+#: gp-includes/template.php:422
+msgid "&mdash; No parent &mdash;"
+msgstr "&mdash; Sin superior &mdash;"
+
+#: gp-includes/template.php:506 gp-templates/project-permissions.php:6
+msgid "Permissions"
+msgstr "Permisos"
+
+#: gp-includes/template.php:114
+msgid "Log in"
+msgstr "Acceder"
+
+#: gp-includes/template.php:111
+msgid "Log out"
+msgstr "Salir"
+
+#: gp-includes/template.php:104 gp-templates/locale.php:5
+#: gp-templates/locales.php:6
+msgid "Locales"
+msgstr "Idiomas"
+
+#: gp-includes/template.php:109 gp-templates/profile-public.php:3
+msgid "Profile"
+msgstr "Perfil"
+
+#: gp-includes/template-links.php:71
+msgid "Home Is Where The Heart Is"
+msgstr "Inicio es donde reside el amor"
+
+#: gp-includes/template-links.php:71
+msgid "Home"
+msgstr "Inicio"
+
+#: gp-includes/template-links.php:61 gp-includes/template-links.php:112
+#: gp-includes/template-links.php:179 gp-templates/glossary-delete.php:28
+#: gp-templates/project-delete.php:20 gp-templates/project-permissions.php:35
+#: gp-templates/translation-set-delete.php:23
+msgid "Delete"
+msgstr "Borrar"
+
+#: gp-includes/routes/translation.php:281
+msgid "Identical current or waiting translation already exists."
+msgstr "Ya existe una traducción actual o a la espera idéntica."
+
+#: gp-includes/routes/translation.php:288
+msgid "Error in saving the translation!"
+msgstr "¡Error al guardar la traducción!"
+
+#: gp-includes/routes/translation.php:404
+msgid "%d translation was approved."
+msgid_plural "%d translations were approved."
+msgstr[0] "%d traducción fue aprobada."
+msgstr[1] "%d traducciones fueron aprobadas."
+
+#: gp-includes/routes/translation.php:405
+msgid "%d translation was rejected."
+msgid_plural "%d translations were rejected."
+msgstr[0] "%d traducción fue rechazada."
+msgstr[1] "%d traducciones fueron rechazadas."
+
+#: gp-includes/routes/translation.php:409
+#: gp-includes/routes/translation.php:422
+msgid "Error with approving %s translation."
+msgid_plural "Error with approving %s translations."
+msgstr[0] "Error en la aprobación de %s traducción"
+msgstr[1] "Error en la aprobación de %s traducciones."
+
+#: gp-includes/routes/translation.php:410
+#: gp-includes/routes/translation.php:425
+msgid "Error with rejecting %s translation."
+msgid_plural "Error with rejecting %s translations."
+msgstr[0] "Error en el rechazo de %s traducción."
+msgstr[1] "Error en el rechazo de %s traducciones."
+
+#: gp-includes/routes/translation.php:413
+msgid "The remaining %s translation was approved successfully."
+msgid_plural "The remaining %s translations were approved successfully."
+msgstr[0] "La traducción %s restante se aprobó con éxito."
+msgstr[1] "Las traducciones %s restantes se aprobaron con éxito."
+
+#: gp-includes/routes/translation.php:416
+msgid "The remaining %s translation was rejected successfully."
+msgid_plural "The remaining %s translations were rejected successfully."
+msgstr[0] "Las %s traducción restante fue rechazada exitosamente."
+msgstr[1] "Las %s traducciones restantes fueron rechazadas exitosamente."
+
+#: gp-includes/routes/translation.php:461
+msgid "Priority of %d original was modified."
+msgid_plural "Priority of %d originals were modified."
+msgstr[0] "Se modificó la prioridad de %d original."
+msgstr[1] "Se modificaron las prioridades de %d originales."
+
+#: gp-includes/routes/translation.php:464
+#: gp-includes/routes/translation.php:469
+msgid "Error modifying priority of %d original."
+msgid_plural "Error modifying priority of %d originals."
+msgstr[0] "Error modificando la prioridad de %d original."
+msgstr[1] "Error modificando la prioridad de %d originales."
+
+#: gp-includes/routes/translation.php:465
+msgid "The remaining %d original was modified successfully."
+msgid_plural "The remaining %d originals were modified successfully."
+msgstr[0] "El original %d restante se modificó con éxito."
+msgstr[1] "Los originales %d restantes se modificaron con éxito."
+
+#: gp-includes/template-links.php:48 gp-includes/template-links.php:83
+#: gp-includes/template-links.php:152
+msgid "Edit"
+msgstr "Editar"
+
+#: gp-includes/routes/project.php:449 gp-includes/things/project.php:323
+msgid "Couldn&#8217;t add translation set named %s"
+msgstr "No se puedo añadir el grupo de traducción denominado %s"
+
+#: gp-includes/routes/project.php:454
+msgid "Couldn&#8217;t delete translation set named %s"
+msgstr "No se pudo borrar la traducción denominada %s"
+
+#: gp-includes/routes/project.php:458
+msgid "Translation sets were added and removed successfully"
+msgstr "Se han añadido y borrado los grupos de traducciones con éxito"
+
+#: gp-includes/routes/translation-set.php:34
+msgid "Error in creating translation set!"
+msgstr "¡Error al crear el grupo de traducción!"
+
+#: gp-includes/routes/translation-set.php:38
+msgid "The translation set was created!"
+msgstr "¡Se ha creado el grupo de traducción!"
+
+#: gp-includes/routes/translation-set.php:90
+msgid "Error in updating translation set!"
+msgstr "¡Error al actualizar el grupo de traducción!"
+
+#: gp-includes/routes/translation-set.php:97
+msgid "The translation set was updated!"
+msgstr "¡El grupo de traducción se ha actualizado!"
+
+#: gp-includes/routes/project.php:308
+msgid "The project was created!"
+msgstr "¡Se creó el proyecto!"
+
+#: gp-includes/routes/project.php:378
+msgid "Validator was added."
+msgstr "Se ha añadido el validador."
+
+#: gp-includes/routes/project.php:401
+msgid "Permission was deleted."
+msgstr "Los permisos fueron eliminados."
+
+#: gp-includes/routes/project.php:403
+msgid "Error in deleting permission!"
+msgstr "¡Error eliminando permisos!"
+
+#: gp-includes/routes/project.php:406
+msgid "Permission wasn&#8217;t found!"
+msgstr "¡No se encontraron permisos!"
+
+#: gp-includes/routes/project.php:442 gp-includes/routes/project.php:478
+msgid "Project wasn&#8217;found"
+msgstr "No se encontró el proyecto"
+
+#: gp-includes/routes/project.php:365
+msgid "User wasn&#8217;t found!"
+msgstr "¡Usuario no encontrado!"
+
+#: gp-includes/routes/project.php:378
+msgid "Error in adding validator."
+msgstr "Error al añadir el validador."
+
+#: gp-includes/routes/project.php:204
+msgid "The project cannot be parent of itself!"
+msgstr "¡El proyecto no puede ser superior de sí mismo!"
+
+#: gp-includes/routes/project.php:207
+msgid "The project was saved."
+msgstr "El proyecto se ha guardado."
+
+#: gp-includes/routes/project.php:210
+msgid "Error in saving project!"
+msgstr "¡Error al guardar proyecto!"
+
+#: gp-includes/routes/project.php:231
+msgid "Error in deleting project!"
+msgstr "¡Error al borrar proyecto!"
+
+#: gp-includes/routes/project.php:305 gp-includes/routes/project.php:528
+msgid "Error in creating project!"
+msgstr "¡Error al crear el proyecto!"
+
+#: gp-includes/routes/project.php:245
+msgid "The project \"%s\" was deleted."
+msgstr "El proyecto \"%s\" se ha borrado."
+
+#. translators: separates links in the navigation breadcrumb
+#: gp-includes/routes/project.php:18 gp-includes/template.php:103
+#: gp-includes/template.php:223 gp-templates/projects.php:3
+#: gp-templates/projects.php:7
+msgid "Projects"
+msgstr "Proyectos"
+
+#: gp-includes/routes/project.php:64
+msgid "%s project "
+msgstr "%s proyecto"
+
+#: gp-includes/routes/project.php:141 gp-includes/routes/translation.php:98
+msgid "Couldn&#8217;t load translations from file!"
+msgstr "¡No se han podido cargar traducciones desde el archivo!"
+
+#: gp-includes/routes/glossary.php:32 gp-includes/routes/glossary.php:59
+msgid "The glossary for this translation set already exists."
+msgstr "El glosario para esta traducción ya existe."
+
+#: gp-includes/routes/glossary.php:70
+msgid "The glossary was created!"
+msgstr "¡Se ha creado el glosario!"
+
+#: gp-includes/routes/glossary.php:76
+msgid "Error in creating glossary!"
+msgstr "¡Error al crear el glosario!"
+
+#: gp-includes/routes/glossary.php:108
+msgid "Error in updating glossary!"
+msgstr "¡Error al actualizar el glosario!"
+
+#: gp-includes/routes/glossary.php:113
+msgid "The glossary was updated!"
+msgstr "¡El glosario se ha actualizado!"
+
+#: gp-includes/routes/glossary.php:85 gp-includes/routes/glossary.php:131
+msgid "Cannot find glossary."
+msgstr "No se pudo encontrar el glosario."
+
+#: gp-includes/routes/locale.php:123 gp-includes/routes/locale.php:125
+msgid "Default"
+msgstr "Por defecto"
+
+#: gp-includes/routes/glossary-entry.php:103
+#: gp-includes/routes/glossary-entry.php:161
+msgid "The glossary entry cannot be found"
+msgstr "La entrada de glosario no se encuentra"
+
+#: gp-includes/routes/glossary-entry.php:115
+#: gp-includes/routes/glossary-entry.php:173
+msgid "Forbidden"
+msgstr "Prohibido"
+
+#: gp-includes/routes/glossary-entry.php:177
+msgid "Error in deleting glossary entry!"
+msgstr "¡Error borrando la entrada de glosario!"
+
+#: gp-includes/routes/glossary-entry.php:273 gp-includes/routes/project.php:127
+#: gp-includes/routes/translation.php:85
+msgid "Error uploading the file."
+msgstr "¡Error subiendo el archivo!"
+
+#: gp-includes/routes/glossary-entry.php:285
+msgid "%s glossary entries were added"
+msgstr "%s entradas de glosario añadidas"
+
+#: gp-includes/routes/glossary-entry.php:314
+msgid "Unexpected values in the CSV file header row."
+msgstr "Valores inesperados en la fila de la cabecera del archivo CSV."
+
+#: gp-includes/routes/glossary-entry.php:87
+msgid "Error in creating glossary entry!"
+msgstr "¡Error al crear entrada de glosario!"
+
+#: gp-includes/routes/glossary-entry.php:91
+msgid "The glossary entry was created!"
+msgstr "¡La entrada de glosario fue creada!"
+
+#. translators: %d: Set ID
+#: gp-includes/cli/remove-multiple-currents.php:8
+msgid "Processing set #%d.."
+msgstr "Procesando grupo #%d.."
+
+#. translators: 1: original ID, 2: new ID
+#: gp-includes/cli/remove-multiple-currents.php:15
+msgid "Duplicate with original_id #%1$d. Translation #%2$d"
+msgstr "Duplicada con original_id #%1$d. Traducción #%2$d"
+
+#: gp-includes/cli/translation-set.php:20 gp-includes/cli.php:87
+msgid "Locale not found!"
+msgstr "¡Idioma no encontrado!"
+
+#: gp-includes/cli/translation-set.php:25 gp-includes/cli.php:92
+msgid "Translation set not found!"
+msgstr "¡Grupo de traducciones no encontrado!"
+
+#. translators: %s: Number of imported translations
+#: gp-includes/cli/translation-set.php:130
+#: gp-includes/routes/translation.php:103
+msgid "%s translation was added"
+msgid_plural "%s translations were added"
+msgstr[0] "%s traducción añadida"
+msgstr[1] "%s traducciones añadidas"
+
+#: gp-includes/cli/wipe-permissions.php:9
+msgid "Error in deleting permissions."
+msgstr "Error al borrar permisos."
+
+#: gp-includes/format.php:60 gp-includes/formats/format_properties.php:331
+msgid "Missing context %s in project #%d"
+msgstr "Sin contexto %s en el proyecto #%d"
+
+#: gp-includes/route.php:115 gp-includes/routes/translation.php:35
+#: gp-includes/routes/translation.php:65
+msgid "You are not allowed to do that!"
+msgstr "¡No tienes permisos para hacer eso!"
+
+#: gp-includes/cli/wipe-permissions.php:12
+msgid "Permissions were deleted. Now you can use `wp glotpress add-admin` to add a new administrator."
+msgstr "Permisos borrados. Ahora puedes usar `wp glotpress add-admin` para añadir un nuevo administrador."
+
+#. translators: %s: ID of a translation
+#: gp-includes/cli/translation-set.php:166
+msgid "Updating warnings for #%s"
+msgstr "Actualizando avisos para #%s"
+
+#: gp-includes/route.php:319 gp-includes/template.php:138
+#: gp-templates/404.api.php:3 gp-templates/404.php:5
+msgid "Not Found"
+msgstr "No encontrado"
+
+#. translators: %s: Username
+#: gp-includes/cli/add-admin.php:17
+msgid "User '%s' doesn't exist."
+msgstr "El usuario '%s' no existe."
+
+#. translators: %s: Username
+#: gp-includes/cli/add-admin.php:21
+msgid "Error in making '%s' an admin."
+msgstr "Error al convertir a '%s' en admin."
+
+#. translators: %s: Username
+#: gp-includes/cli/add-admin.php:25
+msgid "'%s' is now an admin."
+msgstr "'%s' es administrador ahora."
+
+#: gp-includes/cli/branch-project.php:20
+msgid "Source project not found!"
+msgstr "¡Proyecto de origen no encontrado!"
+
+#: gp-includes/cli/branch-project.php:25
+msgid "Destination project not found!"
+msgstr "¡Proyecto de destino no encontrado!"
+
+#: gp-includes/cli/import-originals.php:21
+msgid "-p and -f are no longer required and should be removed."
+msgstr "-p y -f ya no son necesarios y se borrarán."
+
+#: gp-includes/cli/import-originals.php:26
+#: gp-includes/cli/translation-set.php:15 gp-includes/cli.php:84
+msgid "Project not found!"
+msgstr "¡Proyecto no encontrado!"
+
+#: gp-includes/cli/import-originals.php:32
+#: gp-includes/cli/translation-set.php:67 gp-includes/routes/project.php:134
+#: gp-includes/routes/translation.php:92
+msgid "No such format."
+msgstr "No existe el formato."
+
+#: gp-includes/cli/import-originals.php:37
+#: gp-includes/cli/translation-set.php:124
+msgid "Couldn't load translations from file!"
+msgstr "¡No se pueden cargar traducciones del archivo!"
+
+#. translators: 1: number added, 2: number updated, 3: number fuzzied, 4:
+#. number obsoleted
+#: gp-includes/cli/import-originals.php:44 gp-includes/routes/project.php:148
+msgid "%1$s new strings added, %2$s updated, %3$s fuzzied, and %4$s obsoleted."
+msgstr "%1$s cadenas nuevas añadidas, %2$s actualizadas, %3$s confusas, y %4$s obsoletas."
+
+#: glotpress.php:57
+msgid "GlotPress Disabled"
+msgstr "GlotPress deshabilitado"
+
+#: glotpress.php:99
+msgid "&#151; You are running an unsupported version of WordPress."
+msgstr "&#151; Estás ejecutando una versión no compatible de WordPress. "
+
+#. translators: 1: Required version of WordPress 2: Current version of
+#. WordPress
+#: glotpress.php:102
+msgid "GlotPress requires WordPress %1$s or later and has detected you are running %2$s. Upgrade your WordPress install or deactivate the GlotPress plugin to remove this message."
+msgstr "GlotPress requiere WordPress %1$s o posterior y ha detectado que ejecutas la %2$s. Actualiza tu instalación de WordPress o desactiva el plugin GlotPress para eliminar este mensaje."
