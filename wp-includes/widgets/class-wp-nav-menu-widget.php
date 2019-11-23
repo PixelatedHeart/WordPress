@@ -23,10 +23,10 @@ class WP_Nav_Menu_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'description' => __( 'Add a navigation menu to your sidebar.' ),
+			'description'                 => __( 'Add a navigation menu to your sidebar.' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'nav_menu', __('Navigation Menu'), $widget_ops );
+		parent::__construct( 'nav_menu', __( 'Navigation Menu' ), $widget_ops );
 	}
 
 	/**
@@ -59,7 +59,7 @@ class WP_Nav_Menu_Widget extends WP_Widget {
 
 		$nav_menu_args = array(
 			'fallback_cb' => '',
-			'menu'        => $nav_menu
+			'menu'        => $nav_menu,
 		);
 
 		/**
@@ -114,13 +114,14 @@ class WP_Nav_Menu_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		global $wp_customize;
-		$title = isset( $instance['title'] ) ? $instance['title'] : '';
+		$title    = isset( $instance['title'] ) ? $instance['title'] : '';
 		$nav_menu = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
 
 		// Get menus
 		$menus = wp_get_nav_menus();
 
-		$empty_menus_style = $not_empty_menus_style = '';
+		$empty_menus_style     = '';
+		$not_empty_menus_style = '';
 		if ( empty( $menus ) ) {
 			$empty_menus_style = ' style="display:none" ';
 		} else {
@@ -141,12 +142,14 @@ class WP_Nav_Menu_Widget extends WP_Widget {
 			} else {
 				$url = admin_url( 'nav-menus.php' );
 			}
+
+			/* translators: %s: URL to create a new menu. */
+			printf( __( 'No menus have been created yet. <a href="%s">Create some</a>.' ), esc_attr( $url ) );
 			?>
-			<?php echo sprintf( __( 'No menus have been created yet. <a href="%s">Create some</a>.' ), esc_attr( $url ) ); ?>
 		</p>
 		<div class="nav-menu-widget-form-controls" <?php echo $empty_menus_style; ?>>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ) ?></label>
+				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 				<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>"/>
 			</p>
 			<p>
@@ -162,7 +165,7 @@ class WP_Nav_Menu_Widget extends WP_Widget {
 			</p>
 			<?php if ( $wp_customize instanceof WP_Customize_Manager ) : ?>
 				<p class="edit-selected-nav-menu" style="<?php echo $nav_menu_style; ?>">
-					<button type="button" class="button"><?php _e( 'Edit Menu' ) ?></button>
+					<button type="button" class="button"><?php _e( 'Edit Menu' ); ?></button>
 				</p>
 			<?php endif; ?>
 		</div>
